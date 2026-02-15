@@ -2,7 +2,7 @@
 set -e
 
 REGION="ap-southeast-1"
-ACCOUNT_ID="042655076445"
+ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 REPO_NAME="dummy-etl"
 IMAGE_TAG="${1:-latest}"
 
