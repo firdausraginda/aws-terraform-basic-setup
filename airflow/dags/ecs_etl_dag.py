@@ -11,6 +11,7 @@ with DAG(
 
     run_etl = EcsRunTaskOperator(
         task_id="run_dummy_etl",
+        region_name="ap-southeast-1",
         cluster="dummy-etl-cluster",
         task_definition="dummy-etl-task",
         launch_type="FARGATE",
