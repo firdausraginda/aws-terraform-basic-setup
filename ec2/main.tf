@@ -5,6 +5,7 @@ resource "aws_instance" "airflow_test" {
   instance_type               = "t3.small"
   subnet_id                   = "subnet-0e59d3063249f2a7c"
   vpc_security_group_ids      = ["sg-0d9f119fee4b9bb33"]
+  iam_instance_profile        = var.iam_instance_profile
 
   cpu_options {
     core_count       = 1

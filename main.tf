@@ -13,7 +13,8 @@ module "sg" {
 }
 
 module "ec2" {
-  source = "./ec2"
+  source               = "./ec2"
+  iam_instance_profile = module.iam.airflow_ec2_instance_profile_name
 }
 
 module "ecr" {
