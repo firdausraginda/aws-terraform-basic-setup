@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.providers.amazon.aws.operators.ecs import EcsRunTaskOperator
-from datetime import datetime
+from datetime import datetime, timedelta
 
 with DAG(
     dag_id="ecs_dummy_etl",
@@ -26,4 +26,6 @@ with DAG(
         awslogs_group="/ecs/dummy-etl",
         awslogs_stream_prefix="etl",
         awslogs_region="ap-southeast-1",
+        awslogs_fetch_interval=timedelta(seconds=5),
+        number_logs_exception=10,
     )
