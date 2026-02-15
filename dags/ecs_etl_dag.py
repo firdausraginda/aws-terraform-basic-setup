@@ -17,7 +17,7 @@ with DAG(
         network_configuration={
             "awsvpcConfiguration": {
                 "subnets": ["subnet-0e59d3063249f2a7c"],
-                "securityGroups": [],  # fill after terraform apply
+                "securityGroups": ["sg-0249ae52f65168b5d"],
                 "assignPublicIp": "ENABLED",
             }
         },
